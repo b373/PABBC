@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>汉字转换拼音</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/pinyin.js"></script>
+    <style>
+      body{
+        background-image: url("../images/bg.png");
+      }
+     .topmarg{margin-top: 20px;}
+    </style>     
+     
+    </head>
+  <body>
+<div class="container">
+<div class="row text-center topmarg">
+<p><img src="img/logo.jpg"></p>
+<p><h2>在线中文汉字转换拼音</h2></p>
+
+</div>
+</div>
+<div class="container">
+<div class="row">
+  <div class="col-sm-12 col-md-12">
+    <div class="laobuluo_pinyin">
+    <textarea id="content" class="form-control" rows="10">请把你需要转换的内容粘贴在这里。</textarea>
+       <br>
+       <input class="btn btn-default" id="conv" type="button" value="转换成拼音" onclick="trans();"/>
+       <input class="btn btn-default" id="remove" type="button" value="清空结果" onclick="remove();"/>
+    <br>
+    <textarea id="result" class="form-control" rows="10"></textarea>
+   </div>
+</div> 
+</div>
+</div>
+</body>
+</html>

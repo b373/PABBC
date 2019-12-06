@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Markdown一下！</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="lib/material-icons.css">
+    <link rel="stylesheet" href="lib/base16-light.css">
+    <link rel="stylesheet" href="codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="lib/default.css">
+    <link rel="stylesheet" href="lib/github-markdown.css">
+    <link rel="stylesheet" href="lib/spell-checker.min.css">
+    <link rel="stylesheet" href="lib/sweetalert.css">
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body >
+    
+<h1>H1：<code># H1</code></h1>
+<h2>H2：<code>## H2</code></h2>
+<h6>H6：<code>###### H6</code></h6>
+<p><em>斜体</em>：<code>*斜体*</code>或者<code>_斜体_</code><br>
+<strong>加粗</strong>：<code>**加粗**</code>或者<code>__这也是加粗__</code><br>
+<em>也<strong>可以</strong> 组合它们</em>：<code>_也**可以** 组合它们_</code><br>
+<s>删除线</s> ：<code>~~删除线~~</code><br>
+<u>下划线</u> ：<code>&lt;u&gt;下划线&lt;/u&gt;</code></p>
+<h4>分割线</h4>
+<pre><code>---
+***
+___
+</code></pre>
+<p>———</p>
+<hr>
+<p>———</p>
+<h4>无序列表</h4>
+<p>使用*或+或- 后加上一个‘空格’来表示</p>
+<pre><code>* 列表一 
+* 列表一  
+    * 子列表二
+    * 子列表二  
+* 列表一
+
+</code></pre>
+<ul>
+<li>列表一</li>
+<li>列表一
+<ul>
+<li>子列表二</li>
+<li>子列表二</li>
+</ul>
+</li>
+<li>列表一</li>
+</ul>
+<h4>有序列表</h4>
+<p>数字和一个英文句点表示，句点后必须加一个‘空格'</p>
+<pre><code>1. aaaaa 
+2. aaaaa
+    1. bbbbb
+    2. bbbbb 
+3. aaaaa 
+
+</code></pre>
+<ol>
+<li>aaaaa</li>
+<li>aaaaa
+<ol>
+<li>bbbbb</li>
+<li>bbbbb</li>
+</ol>
+</li>
+<li>aaaaa</li>
+</ol>
+<h4>插入图片</h4>
+<p><code>![图片描述](url)</code></p>
+<h4>插入链接</h4>
+<p><code>[链接描述](url)</code><br>
+<a href="url">点我一下</a></p>
+<h4>邮箱</h4>
+<p><code>&lt;address@email.com&gt;</code><br>
+<a href="mailto:address@email.com">address@email.com</a></p>
+<h4>引用</h4>
+<blockquote>
+<p>引用 ：<code>&gt;引用</code></p>
+<blockquote>
+<blockquote>
+<p>嵌套引用 ：<code>&gt;&gt;&gt;嵌套引用</code></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h4>行内代码</h4>
+<pre><code>例如：`A`+`B`
+</code></pre>
+<p>例如：<code>A</code>+<code>B</code></p>
+<h4>代码块</h4>
+<p>```javascript
+function test() {<br>
+console.log("look ma`, no spaces");<br>
+}<br>
+```</p>
+<pre><code class="language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span><span class="hljs-params">()</span> </span>{
+ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"look ma`, no spaces"</span>);
+}
+</code></pre>
+<h4>表格</h4>
+<table>
+<thead>
+<tr>
+<th>表头</th>
+<th>表头</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+<tr>
+<td>20</td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+<h4>单元格居中</h4>
+<p><code>:-</code>：左对齐<br>
+<code>:-:</code>:居中<br>
+<code>-:</code>：右对齐</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">表头</th>
+<th style="text-align:center">表头</th>
+<th style="text-align:right">表头</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">左对齐</td>
+<td style="text-align:center">居中</td>
+<td style="text-align:right">右对齐</td>
+</tr>
+<tr>
+<td style="text-align:left">左对齐</td>
+<td style="text-align:center">居中</td>
+<td style="text-align:right">右对齐</td>
+</tr>
+</tbody>
+</table>
+<h4>添加表情</h4>
+<p><code>:+1: :smile: :sparkles: :camel: :tada: :rocket: ...</code><br>
+<img title=":thumbsup:" alt=":thumbsup:" class="emoji" src="emoji/thumbsup.png" align="absmiddle"> <img title=":smile:" alt=":smile:" class="emoji" src="emoji/smile.png" align="absmiddle">  <img title=":sparkles:" alt=":sparkles:" class="emoji" src="emoji/sparkles.png" align="absmiddle"> <img title=":camel:" alt=":camel:" class="emoji" src="emoji/camel.png" align="absmiddle"> <img title=":tada:" alt=":tada:" class="emoji" src="emoji/tada.png" align="absmiddle">
+<img title=":rocket:" alt=":rocket:" class="emoji" src="emoji/rocket.png" align="absmiddle"> <img title=":metal:" alt=":metal:" class="emoji" src="emoji/metal.png" align="absmiddle"> <img title=":octocat:" alt=":octocat:" class="emoji" src="emoji/octocat.png" align="absmiddle"><br>
+更多表情参考<a href="www.emoji-sheat-sheet.com">www.emoji-sheat-sheet.com</a></p>
+<h4>常用技巧</h4>
+<h5>换行</h5>
+<p>方法一：连续两个以上空格+回车<br>
+方法二：使用html语言换行标签</p>
+<h5>特殊符号</h5>
+<p>对于Markdown中的语法符号，前面加反斜线\即可显示符号本身</p>
+<h5>暂不支持</h5>
+<p>内容目录、锚点、注脚、Latex数学公式、流程图、Todo列表、序列表、甘特图</p>
+<p><strong>ps:</strong> 一定要在符号后面加上一个空格在写内容，不然无法预览</p>
+<script src="lib/markdown-it.js"></script>
+<script src="lib/markdown-it-footnote.js"></script>
+<script src="lib/highlight.pack.js"></script>
+<script src="lib/emojify.js"></script>
+<script src="codemirror/lib/codemirror.js"></script>
+<script src="codemirror/overlay.js"></script>
+<script src="codemirror/xml/xml.js"></script>
+<script src="codemirror/markdown/markdown.js"></script>
+<script src="codemirror/gfm/gfm.js"></script>
+<script src="codemirror/javascript/javascript.js"></script>
+<script src="codemirror/css/css.js"></script>
+<script src="codemirror/htmlmixed/htmlmixed.js"></script>
+<script src="codemirror/lib/util/continuelist.js"></script>
+<script src="lib/spell-checker.min.js"></script>
+<script src="lib/rawinflate.js"></script>
+<script src="lib/rawdeflate.js"></script>
+<script src="lib/sweetalert.min.js"></script>
+<script src="index.js"></script>
+ </body>
+
+ </html>

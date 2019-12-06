@@ -1,0 +1,642 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="runcode/jquery.runCode.css">
+    <style type="text/css">
+     body{
+        padding: 5% 20%;
+        background-image: url("../images/bg.png");
+       
+    }
+        .toolbar {
+            width: 100%;
+            box-shadow: inset 0 1px 3px #d9ded8;
+            background-image:linear-gradient(to top,#fed6e3 0%,#d9ded8 100%);
+            border-bottom: #596164 1px solid;
+ }
+        
+        .text {
+            box-shadow:inset #d0e5f2 0 1px -3px;
+            height: 600px;
+            width: 100%;
+            background-image:linear-gradient(to top,#a8edea 0%,#fed6e3 100%);
+            color:#707070;
+        }
+        #start{
+            width:36px;
+            height:30px;
+            padding:2px 10px;
+            cursor: pointer;
+            color:#707070;
+        }
+       table {
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+table td,
+table th {
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: 3px 5px;
+}
+table th {
+  border-bottom: 2px solid #ccc;
+  text-align: center;
+}
+
+/* blockquote 样式 */
+blockquote {
+  display: block;
+  border-left: 8px solid #d0e5f2;
+  padding: 5px 10px;
+  margin: 10px 0;
+  line-height: 1.4;
+  font-size: 100%;
+  background-color: #f1f1f1;
+}
+
+/* code 样式 */
+code {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  padding: 3px 5px;
+  margin: 0 3px;
+}
+pre code {
+  display: block;
+}
+
+/* ul ol 样式 */
+ul, ol {
+  margin: 10px 0 10px 20px;
+}
+</style>
+</head>
+<body>
+    <div id="div1" class="toolbar"> <div id="start" class="start">‹/›</div>
+    </div>
+    
+    <!-- <div style="padding: 5px 0;"></div> -->
+    <div id="div2" class="text" ><p></p></div>
+    
+    <script src="runcode/jquery.min.js"></script>
+    <script src="runcode/jquery.runCode.js"></script>
+    <script type="text/javascript" src="release/wangEditor.min.js"></script>
+    <script type="text/javascript">
+        var E = window.wangEditor
+        var editor = new E('#div1', '#div2')  // 两个参数也可以传入 elem 对象，class 选择器
+        editor.customConfig.menus = [
+    'head',  // 标题
+    'bold',  // 粗体
+    'fontSize',  // 字号
+    'fontName',  // 字体
+    'italic',  // 斜体
+    'underline',  // 下划线
+    'strikeThrough',  // 删除线
+    'foreColor',  // 文字颜色
+    'backColor',  // 背景颜色
+    'link',  // 插入链接
+    'list',  // 列表
+    'justify',  // 对齐方式
+    'quote',  // 引用
+    'emoticon',  // 表情
+    'image',  // 插入图片
+    'table',  // 表格
+    'code',  // 插入代码
+    'undo',  // 撤销
+    'redo'  // 重复
+    ]
+    editor.customConfig.linkImgCallback = function (url) {
+    console.log(url) // url 即插入图片的地址
+}
+
+editor.customConfig.colors = [
+         "#999999",
+         "#666666",
+         "#f5f5f5",
+         '#33cc66',
+        '#000000',
+        '#eeece0',
+        '#1c487f',
+        '#4d80bf',
+        '#c24f4a',
+        '#8baa4a',
+        '#7b5ba1',
+        '#46acc8',
+        '#f9963b',
+        '#ffffff',
+        '#ffeu76',
+        '#0000ff',
+        '#008000',
+        '#333333',
+        '#555555',
+        '#707070',
+        " #FFFFCC " ,
+        " #FFFF99 " ,
+        " #FFFF66 " ,
+        " #FFFF33 " ,
+        " #FFFF00 " ,
+        " #FFCCFF " ,
+        " #FFCCCC " ,
+        " #FFCC99 " ,
+        " #FFCC66 " ,
+        " #FFCC33 " ,
+        " #FFCC00 " ,
+        " #FF99FF " ,
+        " #FF99CC " ,
+        " #FF9999 " ,
+        " #FF9966 " ,
+        " #FF9933 " ,
+        " #FF9900 " ,
+        " #FF66FF " ,
+        " #FF66CC " ,
+        " #FF6699 " ,
+        " #FF6666 " ,
+        " #FF6633 " ,
+        " #FF6600 " ,
+        " #FF33FF " ,
+        " #FF33CC " ,
+        " #FF3399 " ,
+        " #FF3366 " ,
+        " #FF3333 " ,
+        " #FF3300 " ,
+        " #FF00FF " ,
+        " #FF00CC " ,
+        " #FF0099 " ,
+        " #FF0066 " ,
+        " #FF0033 " ,
+        "#0099CC ",
+        "#009999 ",
+        "#009966 ",
+        "#009933 ",
+        "#009900 ",
+        "#0066FF ",
+        "#0066CC ",
+        "#006699 ",
+        "#006666 ",
+        "#006633 ",
+        "#006600 ",
+        "#0033FF ",
+        "#0033CC ",
+        "#003399 ",
+        "#003366 ",
+        "#003333 ",
+        "#003300 ",
+        "#0000CC ",
+        "#000099 ",
+        "#000066 ",
+        "#000033 "
+       
+
+
+        
+    ]
+    editor.customConfig.emotions = [
+        {
+            // tab 的标题
+            title: '默认',
+            // type -> 'emoji' / 'image'
+            type: 'image',
+            // content -> 数组
+            content: [
+                {
+                    alt: '[]',
+                    src: 'icons/alien-head.svg'
+                },
+                {
+                    alt: '[]',
+                    src: 'icons/airplane.svg'
+                },
+                 {
+                 alt: '[]',
+                 src: 'icons/alien.svg'
+                 },
+                  {
+                  alt: '[]',
+                  src: 'icons/android.svg'
+                  },
+                   {
+                   alt: '[]',
+                   src: 'icons/at-sign.svg'
+                   },
+                    {
+                    alt: '[]',
+                    src: 'icons/atomic-bomb.svg'
+                    },
+                 {
+                 alt: '[]',
+                 src: 'icons/baby-hanging-toy.svg'
+                 },
+                  {
+                  alt: '[]',
+                  src: 'icons/baby-trolley.svg'
+                  },
+                   {
+                   alt: '[]',
+                   src: 'icons/baby.svg'
+                   },
+                    {
+                    alt: '[]',
+                    src: 'icons/backpack.svg'
+                    },
+                    {
+                    alt: '[]',
+                    src: 'icons/bank-note.svg'
+                    }
+                    ,
+                    {
+                    alt: '[]',
+                    src: 'icons/battery-high.svg'
+                    }
+                    ,
+                    {
+                    alt: '[]',
+                    src: 'icons/battery-low.svg'
+                    }
+                    ,
+                    {
+                    alt: '[]',
+                    src: 'icons/beauty-hand-soap.svg'
+                    }
+                    ,
+                    {
+                    alt: '[]',
+                    src: 'icons/beauty-lipstick.svg'
+                    }
+                    ,
+                    {
+                    alt: '[]',
+                    src: 'icons/bin.svg'
+                    }
+                    ,
+                    {
+                    alt: '[]',
+                    src: 'icons/binoculars.svg'
+                    }
+                    ,
+                    {
+                    alt: '[]',
+                    src: 'icons/bitcoin-cloud.svg'
+                    }
+                    ,
+                    {
+                    alt: '[]',
+                    src: 'icons/bitcoin-laptop.svg'
+                    }
+                    ,
+                    {
+                    alt: '[]',
+                    src: 'icons/box-add.svg'
+                    }
+                    ,
+                    {
+                    alt: '[]',
+                    src: 'icons/box-check.svg'
+                    }
+                    ,
+                    {
+                    alt: '[]',
+                    src: 'icons/building-6.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/camera-1.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/calendar-1.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/car-2.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/chair-1.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/check-box.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/chef-1.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/chef-hat.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/cloud.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/coffee-mug.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/cog-box.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/content-book-2.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/couch.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/data-download-5.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/data-upload-5.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/dna.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/eco-car.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/email-heart.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/email-inbox.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/file-new-1.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/file-swap.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/flash.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/folder-close.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/food-steak.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/hand-gun.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/health-graph-1.svg'
+                    },{
+                    alt: '[]',
+                    src: 'icons/hourglass.svg'
+                    }]
+        },
+        {
+            // tab 的标题
+            title: 'emoji',
+            // type -> 'emoji' / 'image'
+            type: 'image',
+            // content -> 数组
+            content: [
+                {
+                alt: '[]',
+                src: 'face/1.gif'
+                },{
+                alt: '[]',
+                src: 'face/2.gif'
+                },{
+                alt: '[]',
+                src: 'face/3.gif'
+                },{
+                alt: '[]',
+                src: 'face/4.gif'
+                },{
+                alt: '[]',
+                src: 'face/5.gif'
+                },{
+                alt: '[]',
+                src: 'face/5.gif'
+                },{
+                alt: '[]',
+                src: 'face/6.gif'
+                },{
+                alt: '[]',
+                src: 'face/7.gif'
+                },{
+                alt: '[]',
+                src: 'face/8.gif'
+                },{
+                alt: '[]',
+                src: 'face/9.gif'
+                },{
+                alt: '[]',
+                src: 'face/10.gif'
+                },{
+                alt: '[]',
+                src: 'face/11.gif'
+                },{
+                alt: '[]',
+                src: 'face/12.gif'
+                },{
+                alt: '[]',
+                src: 'face/13.gif'
+                },{
+                alt: '[]',
+                src: 'face/14.gif'
+                },{
+                alt: '[]',
+                src: 'face/15.gif'
+                },{
+                alt: '[]',
+                src: 'face/16.gif'
+                },{
+                alt: '[]',
+                src: 'face/17.gif'
+                },{
+                alt: '[]',
+                src: 'face/18.gif'
+                },{
+                alt: '[]',
+                src: 'face/19.gif'
+                },{
+                alt: '[]',
+                src: 'face/20.gif'
+                },{
+                alt: '[]',
+                src: 'face/21.gif'
+                },{
+                alt: '[]',
+                src: 'face/22.gif'
+                },{
+                alt: '[]',
+                src: 'face/23.gif'
+                },{
+                alt: '[]',
+                src: 'face/24.gif'
+                },{
+                alt: '[]',
+                src: 'face/25.gif'
+                },{
+                alt: '[]',
+                src: 'face/26.gif'
+                },{
+                alt: '[]',
+                src: 'face/27.gif'
+                },{
+                alt: '[]',
+                src: 'face/28.gif'
+                },{
+                alt: '[]',
+                src: 'face/5.gif'
+                },{
+                alt: '[]',
+                src: 'face/29.gif'
+                },{
+                alt: '[]',
+                src: 'face/30.gif'
+                },{
+                alt: '[]',
+                src: 'face/31.gif'
+                },{
+                alt: '[]',
+                src: 'face/32.gif'
+                },{
+                alt: '[]',
+                src: 'face/33.gif'
+                },{
+                alt: '[]',
+                src: 'face/34.gif'
+                },{
+                alt: '[]',
+                src: 'face/35.gif'
+                },{
+                alt: '[]',
+                src: 'face/36.gif'
+                },{
+                alt: '[]',
+                src: 'face/37.gif'
+                },{
+                alt: '[]',
+                src: 'face/38.gif'
+                },{
+                alt: '[]',
+                src: 'face/39.gif'
+                },{
+                alt: '[]',
+                src: 'face/40.gif'
+                },{
+                alt: '[]',
+                src: 'face/41.gif'
+                },{
+                alt: '[]',
+                src: 'face/42.gif'
+                },{
+                alt: '[]',
+                src: 'face/43.gif'
+                },{
+                alt: '[]',
+                src: 'face/44.gif'
+                },{
+                alt: '[]',
+                src: 'face/45.gif'
+                },{
+                alt: '[]',
+                src: 'face/46.gif'
+                },{
+                alt: '[]',
+                src: 'face/47.gif'
+                },{
+                alt: '[]',
+                src: 'face/48.gif'
+                },{
+                alt: '[]',
+                src: 'face/49.gif'
+                },{
+                alt: '[]',
+                src: 'face/50.gif'
+                },{
+                alt: '[]',
+                src: 'face/51.gif'
+                },{
+                alt: '[]',
+                src: 'face/52.gif'
+                },{
+                alt: '[]',
+                src: 'face/53.gif'
+                },{
+                alt: '[]',
+                src: 'face/54.gif'
+                },{
+                alt: '[]',
+                src: 'face/55.gif'
+                },{
+                alt: '[]',
+                src: 'face/56.gif'
+                },{
+                alt: '[]',
+                src: 'face/57.gif'
+                },{
+                alt: '[]',
+                src: 'face/58.gif'
+                },{
+                alt: '[]',
+                src: 'face/59.gif'
+                },{
+                alt: '[]',
+                src: 'face/60.gif'
+                },{
+                alt: '[]',
+                src: 'face/61.gif'
+                },{
+                alt: '[]',
+                src: 'face/62.gif'
+                },{
+                alt: '[]',
+                src: 'face/63.gif'
+                },{
+                alt: '[]',
+                src: 'face/64.gif'
+                },{
+                alt: '[]',
+                src: 'face/65.gif'
+                },{
+                alt: '[]',
+                src: 'face/66.gif'
+                },{
+                alt: '[]',
+                src: 'face/67.gif'
+                },{
+                alt: '[]',
+                src: 'face/68.gif'
+                },{
+                alt: '[]',
+                src: 'face/69.gif'
+                },{
+                alt: '[]',
+                src: 'face/70.gif'
+                },{
+                alt: '[]',
+                src: 'face/71.gif'
+                }
+            ]
+        }
+    ]
+    editor.customConfig.fontNames = [
+        '宋体',
+        '微软雅黑',
+        'Arial',
+        'Tahoma',
+        'Verdana'
+        
+    ]
+    editor.customConfig.onchange = function (html) {
+        // html 即变化之后的内容
+        console.log(html)
+    }
+    editor.customConfig.onchangeTimeout = 1000 // 单位 ms
+    editor.customConfig.zIndex = 100
+    editor.customConfig.uploadImgShowBase64 = true   // 使用 base64 上传本地图片
+     
+    editor.create()
+
+    var str=editor.txt.html();
+    $("#start").on('click', function() {
+    $("#div2").runCode(str);
+    })
+
+
+   
+</script>
+</body>
+</html>

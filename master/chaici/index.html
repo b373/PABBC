@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>句子拆词</title>
+<style>
+    body{
+        background-image: url("../images/bg.png");
+    }
+.main{
+    margin: 0 auto;
+    padding: 20px;
+    width: 300px;
+    height: 100px;
+    margin-top: 200px;
+}
+.word{
+    margin: 0 auto;
+    width:600px;
+    height: 300px;
+    text-align:left;
+}
+</style>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/ParsingWords.js"></script>
+
+</head>
+<body>
+
+<div class="main">
+<input type="text" id="keyword" value="输入语句拆词" />
+<button onClick="example()">拆词</button>
+</div>
+<div id="content" class="word">
+<span id = 'counters'></span>
+</div>
+</body>
+</html>

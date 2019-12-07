@@ -10,13 +10,14 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
-		<title>Sidebar Transitions</title>
-		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<title>小破站导航</title>
+		<!-- <link rel="stylesheet" type="text/css" href="css/demo.css" /> -->
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
 
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 
 		<script src="js/modernizr.custom.js"></script>
 
@@ -33,101 +34,107 @@
 
 				<ul>
 						<li>
-								<a href="icons/icons-feather.html">
+								<a href="master/icons/icons-feather.html">
 									<i class="fa fa-smile-o fa-lg"></i>
 									<span class="nav-text">icon引用</span>
 								</a>
 							</li>
 							<li>
-								<a href="pabbc/index.html" >
+								<a href="master/imgbed/tuchuang.html">
+									<i class="fa fa-smile-o fa-lg"></i>
+									<span class="nav-text">icon引用</span>
+								</a>
+							</li>
+							<li>
+								<a href="master/pabbc/index.html" >
 									<i class="fa fa-edit fa-lg"></i>
 									<span class="nav-text">富文本编辑器</span>
 								</a>
 							</li>
 							<li>
-								<a href="md/index.html">
+								<a href="master/md/index.html">
 									<i class="fa fa-maxcdn fa-lg"></i>
 									<span class="nav-text">Markdown</span>
 								</a>
 							</li>
 							<li>
-								<a href="ewm/ewm.html">
+								<a href="master/ewm/ewm.html">
 									<i class="fa fa-qrcode fa-lg"></i>
 									<span class="nav-text">二维码生成器</span>
 								</a>
 							</li>
 							
 							<li >
-								<a href="strongbeauty/demo.html">
+								<a href="master/strongbeauty/demo.html">
 									<i class="fa fa-file-code-o fa-lg"></i>
 									<span class="nav-text">JS/HTML美化</span>
 								</a>
 							</li>
 				
 							<li >
-								<a href="cssbeauty/index.html">
+								<a href="master/cssbeauty/index.html">
 									<i class="fa fa-code fa-lg"></i>
 									<span class="nav-text">CSS美化</span>
 								</a>
 							</li>
 							<li >
-								<a href="dataurl/demo.html">
+								<a href="master/dataurl/demo.html">
 									<i class="fa fa-photo fa-lg"></i>
 									<span class="nav-text">图片dataURL转换</span>
 								</a>
 							</li>
 							<li >
-								<a href="colorpick/index.html">
+								<a href="master/colorpick/index.html">
 									<i class="fa fa-eyedropper"></i>
 									<span class="nav-text">Web安全色</span>
 								</a>
 							</li>
 							<li>
-								<a href="pinyin/index.html">
+								<a href="master/pinyin/index.html">
 									<i class="fa fa-exchange fa-lg"></i>
 									<span class="nav-text">汉字转拼音</span>
 								</a>
 							</li>
 							<li>
-								<a href="chaici/index.html">
+								<a href="master/chaici/index.html">
 									<i class="fa fa-cut fa-lg"></i>
 									<span class="nav-text">句子拆词</span>
 								</a>
 							</li>
 							<li>
-								<a href="todolist/index.html">
+								<a href="master/todolist/index.html">
 									<i class="fa fa-th-list fa-lg"></i>
 									<span class="nav-text">ToDo-list</span>
 								</a>
 							</li>
 							<li>
-								<a href="shadows/index.html">
+								<a href="master/shadows/index.html">
 									<i class="fa fa-eject fa-lg"></i>
 									<span class="nav-text">阴影生成
 									</span>
 								</a>
 							</li>
 							<li >
-								<a href="gamelist/index.html">
+								<a href="master/gamelist/index.html">
 									<i class="fa fa-gamepad fa-lg"></i>
 									<span class="nav-text">在线小游戏</span>
 								</a>
 							</li>
 							<li>
-								<a href="googleurl.html">
+								<a href="master/googleurl.html">
 									<i class="fa fa-google-plus fa-lg"></i>
 									<span class="nav-text">Google URL追踪
 									</span>
 								</a>
 							</li>
 							<li >
-								<a href="goupibutong/index.html">
+								<a href="master/goupibutong/index.html">
 									<i class="fa fa-stack-overflow fa-lg"></i>
 									<span class="nav-text">狗屁不通文章生成</span>
 								</a>
 							</li>
 							<li>
-								<a href="richeng/index.html">
+								<a href="master/richeng/index.html">
 									<i class="fa fa-calendar-check-o fa-lg"></i>
 									<span class="nav-text">日程表</span>
 								</a>
@@ -156,7 +163,17 @@
 
 						<header class="codrops-header">
 
-							<h1>Sidebar Transitions <span>Transition effects for off-canvas views</span></h1>
+							<h1>Site Navigation
+							</h1>
+							<div>
+
+
+								<div  onclick="randomSentence()">
+									<image src="master/images/xin.png" ></image>
+								</div>
+								<span class=" sentence " id="sentence"></span>
+							</div>
+
 
 						</header>
 						
@@ -174,15 +191,14 @@
 							</div>
 
 						</div>
+
 					</div>
 					</div>
 
-					
+			
 
-				
-			</div><!-- /st-pusher -->
-
-		</div><!-- /st-container -->
+		</div>
+		<script src="js/index.js"></script>
 
 		<script src="js/classie.js"></script>
 

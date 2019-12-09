@@ -146,7 +146,7 @@ Q:after {
 	CONTENT: ''
 }
 BODY {
-	FONT-FAMILY: 'ËÎÌå'; FONT-SIZE: 12px
+	FONT-FAMILY: 'ï¿½ï¿½ï¿½ï¿½'; FONT-SIZE: 12px
 }
 
 @media Unknown    
@@ -573,7 +573,7 @@ A {
 	BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px
 }
 .ibox {
-	BACKGROUND: #f7f7f7; OVERFLOW: hidden; _display: inline-block
+	BACKGROUND: #f7f7f7; OVERFLOW: hidden; _display: inline-block;
 }
 .il {
 	WIDTH: 559px; BACKGROUND: #fff; FLOAT: left; BORDER-RIGHT: #e6e6e6 1px solid
@@ -705,7 +705,7 @@ A {
 	BORDER-RIGHT-WIDTH: 0px; WIDTH: 160px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 40px; BORDER-LEFT-WIDTH: 0px; CURSOR: pointer
 }
 .ir {
-	WIDTH: 400px; FLOAT: right
+	WIDTH: 400px;
 }
 .irtit {
 	TEXT-ALIGN: center; PADDING-BOTTOM: 0px; LINE-HEIGHT: 25px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; COLOR: #666; FONT-SIZE: 14px; PADDING-TOP: 16px

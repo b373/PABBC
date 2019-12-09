@@ -11,14 +11,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
 		<title>小破站导航</title>
-		<!-- <link rel="stylesheet" type="text/css" href="css/demo.css" /> -->
+		
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+		
 
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 
+		<link rel="stylesheet" href="sousu.css" type="text/css">
 		<script src="js/modernizr.custom.js"></script>
 
 	</head>
@@ -34,7 +37,7 @@
 
 				<ul>
 						<li>
-								<a href="master/icons/icons-feather.html">
+							<a href="master/icons/icons-feather.html">
 									<i class="fa fa-smile-o fa-lg"></i>
 									<span class="nav-text">icon引用</span>
 								</a>
@@ -42,21 +45,11 @@
 							<li>
 								<a href="master/imgbed/tuchuang.html">
 									<i class="fa fa-smile-o fa-lg"></i>
-									<span class="nav-text">icon引用</span>
+									<span class="nav-text">在线图床</span>
 								</a>
 							</li>
-							<li>
-								<a href="master/pabbc/index.html" >
-									<i class="fa fa-edit fa-lg"></i>
-									<span class="nav-text">富文本编辑器</span>
-								</a>
-							</li>
-							<li>
-								<a href="master/md/index.html">
-									<i class="fa fa-maxcdn fa-lg"></i>
-									<span class="nav-text">Markdown</span>
-								</a>
-							</li>
+							
+							
 							<li>
 								<a href="master/ewm/ewm.html">
 									<i class="fa fa-qrcode fa-lg"></i>
@@ -83,12 +76,7 @@
 									<span class="nav-text">图片dataURL转换</span>
 								</a>
 							</li>
-							<li >
-								<a href="master/colorpick/index.html">
-									<i class="fa fa-eyedropper"></i>
-									<span class="nav-text">Web安全色</span>
-								</a>
-							</li>
+				
 							<li>
 								<a href="master/pinyin/index.html">
 									<i class="fa fa-exchange fa-lg"></i>
@@ -114,12 +102,7 @@
 									</span>
 								</a>
 							</li>
-							<li >
-								<a href="master/gamelist/index.html">
-									<i class="fa fa-gamepad fa-lg"></i>
-									<span class="nav-text">在线小游戏</span>
-								</a>
-							</li>
+						
 							<li>
 								<a href="master/googleurl.html">
 									<i class="fa fa-google-plus fa-lg"></i>
@@ -133,12 +116,7 @@
 									<span class="nav-text">狗屁不通文章生成</span>
 								</a>
 							</li>
-							<li>
-								<a href="master/richeng/index.html">
-									<i class="fa fa-calendar-check-o fa-lg"></i>
-									<span class="nav-text">日程表</span>
-								</a>
-							</li>
+							
 							<li>
 								<a href=" https://github.com/b373/Pabbc">
 									<i class="fa fa-github fa-lg"></i>
@@ -159,20 +137,28 @@
 							<div id="st-trigger-effects" class="caidan">
 									<button data-effect="st-effect-1"><i class="fa fa-bars "></i></button>
 								</div>
-		
 
 						<header class="codrops-header">
 
-							<h1>Site Navigation
-							</h1>
-							<div>
-
-
+								<div class="search_part">
+										<a class="logo" href="folder://">
+										<img class="smaller" src="logo.gif">
+										</a>
+										
+										<form onsubmit="return search()" class="search_bar" <span="">
+											<input class="search" type="text" value="" autocomplete="off" id="search_input">
+										</form>
+										</div>
+										
+										
+										
+							
+							
 								<div  onclick="randomSentence()">
 									<image src="master/images/xin.png" ></image>
 								</div>
 								<span class=" sentence " id="sentence"></span>
-							</div>
+							
 
 
 						</header>
@@ -182,15 +168,51 @@
 
 							<div  class="column">
 
+									<div class="divTable">
+											<div class="row">
+												<div class="cell"></div>
+											</div>
+											<div class="row">
+												<div class="cell"></div>
+											</div>
+											<div class="row">
+												<div class="cell"></div>
+											</div>
+											<div class="row">
+												<div class="cell"></div>
+											</div>
+											<div class="row">
+												<div class="cell"></div>
+											</div>
+										</div>
+
 							</div>
 
 							<div class="column">
 
-								
 
+									<div class="divTable">
+											<div class="row">
+												<div class="cell"></div>
+											</div>
+											<div class="row">
+												<div class="cell"></div>
+											</div>
+											<div class="row">
+												<div class="cell"></div>
+											</div>
+											<div class="row">
+												<div class="cell"></div>
+											</div>
+											<div class="row">
+												<div class="cell"></div>
+											</div>
+										</div>
 							</div>
+						</div>	
+							
 
-						</div>
+						
 
 					</div>
 					</div>
@@ -198,6 +220,7 @@
 			
 
 		</div>
+		<script type="text/javascript">function search(){if(document.getElementById("search_input").value != ""){window.location.href = "https://www.baidu.com/s?word=" + document.getElementById("search_input").value;document.getElementById("search_input").value = "";}return false;}</script>
 		<script src="js/index.js"></script>
 
 		<script src="js/classie.js"></script>

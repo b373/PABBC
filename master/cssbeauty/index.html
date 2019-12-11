@@ -7,7 +7,13 @@
 	body{
 		background-image: url("../images/bg.png");
 	}
-textarea{width:900px;height: 420px;font: 12px/1.6em 'Lucida Console', 'monospace', 'Consolas';letter-spacing: 1px}
+	.but{
+		width: 40%;
+		height: 2.5em;
+		font-size:2em;
+		margin: 5px 10px;
+}
+textarea{width:90%;height:30em;font:1.4em 'Lucida Console', 'monospace', 'Consolas';letter-spacing: 1px}
 textarea::-webkit-scrollbar{width:10px;height:10px;}
 textarea::-webkit-scrollbar-button:vertical:increment{background-color:transparent;}
 textarea::-webkit-scrollbar-track:enabled{background-color:rgba(113,112,107,0.1);-webkit-border-radius:5px;}
@@ -36,10 +42,10 @@ a:active{background: none}
 a{outline: none;}
 	</textarea>
 	<br>
-	<input type="button" name="" value="压缩" id='encode'>
-	<input type="button" name="" value="美化" id='decode'>
-	<input type="button" name="" value="净化" id='purify'>
-	<input type="button" name="" value="清空" id='empty'>
+	<input class="but" type="button" name="" value="压缩" id='encode'>
+	<input class="but" type="button" name="" value="美化" id='decode'>
+	<input class="but" type="button" name="" value="净化" id='purify'>
+	<input class="but" type="button" name="" value="清空" id='empty'>
 </center>
 <script>
 var oEncodeBtn = document.getElementById('encode');

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="cleartype" content="on">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>图床</title>
+	
+	<link href="css/jumbotron-narrow.css" rel="stylesheet">
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<style>
+        body {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 50rem;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 2rem;
+        }
+
+       
+
+
+        .mouse-pointer {
+            cursor: pointer;
+        }
+		.card{
+			text-align: center;
+			margin-top: 10px;
+		}
+      </style>
+
+</head>
+<body>
+	
+		
+		<section>
+		    <div class="container">
+		        <div class="card">
+					<div class="header">
+						<h2>
+							在线图床
+						</h2>
+						<p class="lead">
+							支持直接拖拽和批量上传
+						</p>
+					</div>
+		        </div>
+		        <div class="card">
+		            <div class="mselector">
+						<input type="file" accept="image/*" multiple="">
+						<button type="button" class="btn btn-lg btn-info">选择本地图片</button>
+					</div>
+		        </div>
+					<div class="card">
+						<div class="bodyer">
+							<label><input name="keke" checked="checked" type="radio" value="1688">阿里图床</label>
+							<label><input name="keke" type="radio" value="tieba">百度图床</label>
+							<label><input name="keke" type="radio" value="360">360 图床</label>
+							<br>
+							<label><input name="keke" type="radio" value="taobao">淘宝图床</label>
+							<label><input name="keke" type="radio" value="smms">神马图床</label>
+							<label><input name="keke" type="radio" value="sohu">搜狐图床</label>
+						</div>
+					</div>
+		        
+					<div class="card">
+		            <textarea id="url-res-txt" class="form-control" rows="10" placeholder="上传后的图片外链地址将显示在此处哦、下方会同时显示外链地址和预览图。"></textarea>
+					</div>
+					<div class="preview">
+						<br><hr>
+					</div>
+		            
+		    </div>
+		</section>
+		
+		<script type="text/javascript">
+			$(document).ready(function() {
+				
+				$('.picurl > input').bind('focus mouseover', function() {
+					if (this.value) {
+						this.select()
+					}
+				});
+				$("input[type='file']").change(function(e) {
+					imagesUpload(this.files)
+				});
+				var obj = $('body');
+				obj.on('dragenter', function(e) {
+					e.stopPropagation();
+					e.preventDefault()
+				});
+				obj.on('dragover', function(e) {
+					e.stopPropagation();
+					e.preventDefault()
+				});
+				obj.on('drop', function(e) {
+					e.preventDefault();
+					imagesUpload(e.originalEvent.dataTransfer.files)
+				})
+			});
+			
+			/**
+			  * 普通图片上传
+			 */
+			var imagesUpload = function(files) {
+				a=$('input:radio:checked').val();
+				var flag = 0;
+				$('textarea').empty();
+				$(files).each(function(key, value) {
+					$('.mselector > button')[0].innerHTML = '上传中';
+					
+					setTimeout(function() {
+						uurrll = 'https://pic.suo.dog/api/tc.php?type='+a+'&echo=imgurl'
+						image_form = new FormData();
+						image_form.append("file", value);
+					
+						$.ajax({
+							url: uurrll,
+							type: 'POST',
+							data: image_form,
+							contentType: false,
+							cache: false,
+							processData: false,
+							async: false,
+							success: function(data) {
+								flag++;
+								//var jsonData = JSON.stringify(data)
+								if (typeof(data) == 'string'){
+									imgurl = data
+								} else {
+									imgurl = data.imgurl
+								}
+								
+								//alert(data)
+								$('#url-res-txt').append(imgurl + '\n');
+								$('.mselector > button')[0].innerHTML = '成功 ' + flag + '/' + files.length;
+								
+								// 生成预览图
+								var apc = "<img src='" + imgurl + "' referrerpolicy=\"no-referrer\" /><p>&nbsp;</p>";							
+								$('.preview').css('display', 'block');
+								$(".preview>hr").before(apc)
+								
+								
+								if (flag == $("input[type='file']")[0].files.length) {
+									if (typeof imgurl != 'undefined') {
+										$('.mselector > button')[0].innerHTML = '上传成功'
+									} else {
+										$('.mselector > button')[0].innerHTML = '上传失败';
+										$('#url-res-txt').append(data.error_msg + '\n');
+										alert(data.error_msg)
+									}
+								}
+								
+							},
+							error: function(XMLResponse){
+								alert("error:" + XMLResponse.responseText);
+							}
+						});
+						
+					}, 100);
+				})
+			};
+			
+		</script>
+	
+	
+</body>
+</html>

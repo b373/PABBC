@@ -6,13 +6,24 @@
 <style>
     body{
         background-image: url("../images/bg.png");
+        
     }
+.text{
+
+    width: 80%;
+    height: 70px;
+    font-size: 3em;
+}
+.but{
+    font-size: 3em;
+    height:70px;
+}
 .main{
     margin: 0 auto;
-    padding: 20px;
-    width: 300px;
+    width: 100%;
     height: 100px;
-    margin-top: 200px;
+    margin-top: 200px ;
+    text-align: center;
 }
 .word{
     margin: 0 auto;
@@ -28,8 +39,8 @@
 <body>
 
 <div class="main">
-<input type="text" id="keyword" value="输入语句拆词" />
-<button onClick="example()">拆词</button>
+<input type="text" id="keyword" value="输入语句拆词" class="text"/>
+<button class="but" onClick="example()">拆词</button>
 </div>
 <div id="content" class="word">
 <span id = 'counters'></span>

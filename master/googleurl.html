@@ -3,22 +3,23 @@
 	<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>google跟踪链接生成工具</title>
 	
+	
 <style type="text/css">
-     *{
-		 margin: 0 auto;
-		 padding: 0;
+     *{font-size:30px;
+		 margin: 10px auto;
+		 padding:0 5px;
 	 }
-	.dd li {line-height: 40px; height: 40px;}
+	dd li {
+		
+		line-height:50px; height:50px;}
 	#gen_link{color:#008000;}
 	#main{
-		font-size: 16px;
-		margin-top: 20px;
+		
+		margin:0 30px;
 		
 	}
 
 </style>
-<script charset="utf-8" src="chrome-extension://nfbikdkjfjcejddbdcpbafnclkfdhijd/js/btype.js"></script>
-<script type="text/javascript" charset="utf-8" src="chrome-extension://nfbikdkjfjcejddbdcpbafnclkfdhijd/js/chrome.js"></script>
 </head>
 
 <body style="background-image: url('images/bg.png');">
@@ -63,11 +64,11 @@
 				</select>
 				(如PPC、CPC、CPS、CPA、EDM)</li>
 			<li>广告系列字词(utm_term)：<input id="term" name="term" type="text"> 
-			（用于付费搜索，用来注明此广告的关键字）</li>
+			（付费搜索注明广告的关键字）</li>
 			<li>广告系列内容(utm_content)：<input id="content" name="content" type="text"> 
-			（用于 A/B 测试和 以网页内容定位的 广告）</li>
+			（用于网页内容定位的广告）</li>
 			<li>广告系列名称(utm_campaign)：*<input id="campaign" name="campaign" type="text">
-	         (如果是付费流量，来标识特定的产品促销活动或战略性广告系列)</li>
+	         (标识特定的产品或战略性广告系列)</li>
 		</ul>
 	  <div><input type="button" value="确定" onclick="gen()"></div>
 	</div>

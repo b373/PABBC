@@ -1,8 +1,44 @@
+<link rel="stylesheet" href="../bootstrap.min.css">
 <style>
-html{
-    background-image: url('../images/bg.png');
+body {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 50em;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 2rem;
+        }
+
+        .mouse-pointer {
+            cursor: pointer;
+        }
+		.card{
+			text-align: center;
+            margin-top: 10px;
+            /* font-size: 3em; */
+		}
+h1{
+    font-size:5em;
+    margin: 10px;
+    font-weight: bold;
+}
+h4{
+    font-size: 2.5em;
+    color: #666;
+}
+.input{
+    font-size: 3em;
+    margin: 0  20px;
+}
+.but{
+    margin-top: 20px;
+    width: 5em;
 }
 </style>
+
 <script>
 
 window.$ = function (selector) {
@@ -218,7 +254,18 @@ function 生成文章(){
 }
 
 </script>
-<div>狗屁不通文章生成</div>
-<div>主题<input value="一天掉多少根头发"></input></div>
-<div></div><button onclick="生成文章()">生成</button></div>
+<section>
+<div class="container">
+<div class="card">
+ <h1>狗屁不通文章生成</h1>
+             
+<h4>在下方输入关键词/长尾词</h4>
+<div class="input">
+<input value="一天掉多少根头发"></input>
+<button onclick="生成文章()" class="but">生成</button>
+</div>
 <div id="论文"></div>
+</div>
+</div>
+</div>
+</section>

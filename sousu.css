@@ -3,8 +3,8 @@
 	margin: 0;
 }
 img.smaller {
-	width: 198px;
-	height: 65px;
+	width: 72px;
+	height: 72px;
 	max-width: 250px;
 	animation: flipInX 4s;
 	-webkit-animation: flipInX 4s
@@ -26,7 +26,7 @@ img.smaller {
 	width: 100%;
 	height: 40px;
 	background-color:#f4f4f4;
-	box-shadow: 0 0 18px rgba(70,70,40,.255);
+	box-shadow: -1px -1px 3px  #aca89a;
 	border: none;
 	outline: 0;
 	font-size: 18px;
@@ -46,11 +46,7 @@ img.smaller {
 
 
 .search_bar {
-	/* box-shadow: 0 0 18px rgba(70,70,40,.255);
-	-webkit-animation: fadeIn 2.5s;
-	animation: fadeIn 2.5s;
-	background-color: rgba(255,255,255,.100);
-	border-radius: 50px; */
+	
 	display: table;
 	vertical-align: middle;
 	width: 80%;

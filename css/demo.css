@@ -12,7 +12,7 @@
 
 body {
 	background: #444;
-	color: #ffdf83;
+	color: #FFBF6B;
 	font-weight:300;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -146,24 +146,20 @@ a:hover, a:focus {
 }
 
 button {
-	width:3em;
-	height:3em;
+	background: #fff;
 	border: none;
-	background: #ffdf83;
-	color: #666;
+	color: #FFBF6B;
 	font-family: 'Lato', Calibri, Arial, sans-serif;
-	font-size: 1em;
+	font-size: 2em;
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	cursor: pointer;
 	display: inline-block;
-	margin:1em;
-	border-radius:50%;
-	box-shadow:0 3px 5px 0 rgba(0, 0, 0, 0.11);
+	text-shadow:-1px -1px 3px  #aca89a;
 }
 
 button:hover {
-	transform: rotate(90deg);
+	color: #688FCC;
 }
 
 .info {

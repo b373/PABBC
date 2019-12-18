@@ -1,0 +1,317 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的书签</title>
+<link rel="shortcut icon" href="mark.png" /> 
+<!--图标样式和布局-->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+
+<!--公共样式-->
+<link rel="stylesheet" type="text/css" href="css/demo.css">
+
+<style type="text/css">
+	.demo{padding: 2em; background: #fff;}
+	a:hover,a:focus{
+		text-decoration: none;
+		outline: none;
+	}
+	#accordion .panel{
+		border: none;
+		box-shadow: none;
+		border-radius: 0;
+		margin: 0 0 15px 10px;
+	}
+	#accordion .panel-heading{
+		padding: 0;
+		border-radius: 30px;
+	}
+	#accordion .panel-title a{
+		display: block;
+		padding: 12px 20px 12px 50px;
+		background: #FFBF6B;
+		font-size: 18px;
+		font-weight: 600;
+		color: #333;
+		border: 1px solid transparent;
+		border-radius: 30px;
+		position: relative;
+		transition: all 0.3s ease 0s;
+	}
+	#accordion .panel-title a.collapsed{
+		background: #fff;
+		color: #0d345d;
+		border: 1px solid #ddd;
+	}
+	#accordion .panel-title a:after,
+	#accordion .panel-title a.collapsed:after{
+		content: "\f107";
+		font-family: fontawesome;
+		width: 55px;
+		height: 55px;
+		line-height: 55px;
+		border-radius: 50%;
+		background: #FFBF6B;
+		font-size: 25px;
+		color: #333;
+		text-align: center;
+		border: 1px solid transparent;
+		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.58);
+		position: absolute;
+		top: -5px;
+		left: -20px;
+		transition: all 0.3s ease 0s;
+	}
+	#accordion .panel-title a.collapsed:after{
+		content: "\f105";
+		background: #fff;
+		color: #0d345d;
+		border: 1px solid #ddd;
+		box-shadow: none;
+	}
+	#accordion .panel-body{
+		padding: 20px 25px 10px 9px;
+		background: transparent;
+		font-size: 14px;
+		color: #8c8c8c;
+		line-height: 25px;
+		border-top: none;
+		position: relative;
+	}
+	#accordion .panel-body p{
+		padding-left:15px;
+		margin: 0 10px 10px 0;
+		/* border-left: 1px dashed #8c8c8c; */
+		float: left;
+	}
+</style>
+</head>
+<body>
+
+<div class="demo">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-offset-3 col-md-6">
+				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingbest">
+							<h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsebest" aria-expanded="false" aria-controls="collapsebest">
+									推荐网址
+								</a>
+							</h4>
+						</div>
+						<div id="collapsebest" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingbest">
+							<div class="panel-body">
+								<p><a href="http://www.dxzy163.com/">大学资源网</a></p>
+								<p><a href="http://www.ucdrs.superlib.net/">全国图书馆参考咨询联盟</a></p>
+								<p><a href="https://www.examcoo.com/index/ku">考试酷</a></p>
+								<p><a href="http://www.socolar.com/">SOCOLAR</a></p>
+								<p><a href="http://www.termonline.cn/index.htm">学术在线</a></p>
+								<p><a href="http://scholar.hezibuluo.com/">盒子学术</a></p>
+								<p><a href="http://www.chinalibs.net/">e线图情</a></p>
+								<p><a href="http://www.modernhistory.org.cn/index.htm">抗日文献数据平台</a></p>
+								<p><a href="https://ac.scmor.com/">谷歌学术镜像</a></p>
+								<p><a href="http://www.oalib.com/">OALib</a></p>
+								<p><a href="http://www.nssd.org/">国家哲学社会科学学术期刊数据库</a></p>
+							</div>
+						</div>
+					</div>
+
+
+
+
+
+
+
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headinglearning">
+							<h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#collapselearning" aria-expanded="false" aria-controls="collapselearning">
+									学术文献
+								</a>
+							</h4>
+						</div>
+						<div id="collapselearning" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headinglearning">
+							<div class="panel-body">
+								<p><a href="http://www.dxzy163.com/">大学资源网</a></p>
+								<p><a href="http://www.ucdrs.superlib.net/">全国图书馆参考咨询联盟</a></p>
+								<p><a href="https://www.examcoo.com/index/ku">考试酷</a></p>
+								<p><a href="http://www.socolar.com/">SOCOLAR</a></p>
+								<p><a href="http://www.termonline.cn/index.htm">学术在线</a></p>
+								<p><a href="http://scholar.hezibuluo.com/">盒子学术</a></p>
+								<p><a href="http://www.chinalibs.net/">e线图情</a></p>
+								<p><a href="http://www.modernhistory.org.cn/index.htm">抗日文献数据平台</a></p>
+								<p><a href="https://ac.scmor.com/">谷歌学术镜像</a></p>
+								<p><a href="http://www.oalib.com/">OALib</a></p>
+								<p><a href="http://www.nssd.org/">国家哲学社会科学学术期刊数据库</a></p>
+							
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingresource">
+							<h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseresource" aria-expanded="false" aria-controls="collapseresource">
+									资源搜索
+								</a>
+							</h4>
+						</div>
+						<div id="collapseresource" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingresource">
+							<div class="panel-body">
+								<p><a href="http://www.dxzy163.com/">大学资源网</a></p>
+								<p><a href="http://www.ucdrs.superlib.net/">全国图书馆参考咨询联盟</a></p>
+								<p><a href="https://www.examcoo.com/index/ku">考试酷</a></p>
+								<p><a href="http://www.socolar.com/">SOCOLAR</a></p>
+								<p><a href="http://www.termonline.cn/index.htm">学术在线</a></p>
+								<p><a href="http://scholar.hezibuluo.com/">盒子学术</a></p>
+								<p><a href="http://www.chinalibs.net/">e线图情</a></p>
+								<p><a href="http://www.modernhistory.org.cn/index.htm">抗日文献数据平台</a></p>
+								<p><a href="https://ac.scmor.com/">谷歌学术镜像</a></p>
+								<p><a href="http://www.oalib.com/">OALib</a></p>
+								<p><a href="http://www.nssd.org/">国家哲学社会科学学术期刊数据库</a></p>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingwork">
+							<h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsework" aria-expanded="false" aria-controls="collapsework">
+									办公常用
+								</a>
+							</h4>
+						</div>
+						<div id="collapsework" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingwork">
+							<div class="panel-body">
+								<p><a href="https://www.hipdf.com/">Hipdf-在线PDF编辑器</a></p>
+								<p><a href="https://lightpdf.com/">LightPDF</a></p>
+								<p><a href="http://PDFmyURL.com">PDFmyURL</a></p>
+								<p><a href="https://www.pdfpai.com/">PFD派</a></p>
+								<p><a href="https://www.ilovepdf.com/">iLovePDF</a></p>
+								<p><a href="https://pdfcandy.com/cn/">PDF Candy</a></p>
+								<p><a href="https://cloudconvert.com/">cloudconvert</a></p>
+								<p><a href="https://cn.office-converter.com/">office-converter</a></p>
+								<p><a href="https://www.screely.com/">仿mac窗口截图</a></p>
+								<p><a href="https://beecut.cn/online-video-editor">蜜蜂剪辑</a></p>
+								<p><a href="https://2zimu.com">突字幕</a></p>
+								<p><a href="http://mail.bccto.me/?lang=cn">临时邮箱</a></p>
+								<p><a href="https://cp.anyknew.com/">拷贝兔</a></p>
+								<p><a href="https://www.tool2.cn/">兔二工具集</a></p>
+								<p><a href="https://www.weiciyun.com/">微词云</a></p>
+								<p><a href="https://tableconvert.com/">Table Convert</a></p>
+								<p><a href="https://fullpagescreencapture.com">完整截取网页</a></p>
+								<p><a href="http://www.addog.vip/#hot13">广告狗</a></p>
+								<p><a href="https://m.chuangkit.com/">创客贴</a></p>
+								<p><a href="http://www.beautifulcarrot.com/">模仿真人手写</a></p>
+								<p><a href="https://convertio.co/zh/">文件转换器</a></p>
+								<p><a href="https://www.arkie.cn/">ARKIE作图</a></p>
+								<p><a href="https://tool.gifhome.com/">GIF工具之家</a></p>
+								<p><a href="http://www.smartresize.com/zh-cn">批量图片工具</a></p>
+								<p><a href="https://www.iloveimg.com/zh-cn">图片在线工具</a></p>
+							</div>
+						</div>
+					</div>
+				
+				
+					
+
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headinglife">
+							<h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapselife" aria-expanded="false" aria-controls="collapselife">
+									生活助手
+								</a>
+							</h4>
+						</div>
+						<div id="collapselife" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headinglife">
+							<div class="panel-body">
+								<p><a href="http://www.dxzy163.com/">大学资源网</a></p>
+								<p><a href="http://www.ucdrs.superlib.net/">全国图书馆参考咨询联盟</a></p>
+								<p><a href="https://www.examcoo.com/index/ku">考试酷</a></p>
+								<p><a href="http://www.socolar.com/">SOCOLAR</a></p>
+								<p><a href="http://www.termonline.cn/index.htm">学术在线</a></p>
+								<p><a href="http://scholar.hezibuluo.com/">盒子学术</a></p>
+								<p><a href="http://www.chinalibs.net/">e线图情</a></p>
+								<p><a href="http://www.modernhistory.org.cn/index.htm">抗日文献数据平台</a></p>
+								<p><a href="https://ac.scmor.com/">谷歌学术镜像</a></p>
+								<p><a href="http://www.oalib.com/">OALib</a></p>
+								<p><a href="http://www.nssd.org/">国家哲学社会科学学术期刊数据库</a></p>
+							</div>
+						</div>
+					</div>
+				
+				
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingfive">
+							<h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
+									图形图像
+								</a>
+							</h4>
+						</div>
+						<div id="collapsefive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfive">
+							<div class="panel-body">
+								<p><a href="http://www.dxzy163.com/">大学资源网</a></p>
+								<p><a href="http://www.ucdrs.superlib.net/">全国图书馆参考咨询联盟</a></p>
+								<p><a href="https://www.examcoo.com/index/ku">考试酷</a></p>
+								<p><a href="http://www.socolar.com/">SOCOLAR</a></p>
+								<p><a href="http://www.termonline.cn/index.htm">学术在线</a></p>
+								<p><a href="http://scholar.hezibuluo.com/">盒子学术</a></p>
+								<p><a href="http://www.chinalibs.net/">e线图情</a></p>
+								<p><a href="http://www.modernhistory.org.cn/index.htm">抗日文献数据平台</a></p>
+								<p><a href="https://ac.scmor.com/">谷歌学术镜像</a></p>
+								<p><a href="http://www.oalib.com/">OALib</a></p>
+								<p><a href="http://www.nssd.org/">国家哲学社会科学学术期刊数据库</a></p>
+							</div>
+						</div>
+					</div>
+				
+				
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingfun">
+							<h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsefun" aria-expanded="false" aria-controls="collapsefun">
+									沙雕搞笑
+								</a>
+							</h4>
+						</div>
+						<div id="collapsefun" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfun">
+							<div class="panel-body">
+								<p><a href="http://www.dxzy163.com/">大学资源网</a></p>
+								<p><a href="http://www.ucdrs.superlib.net/">全国图书馆参考咨询联盟</a></p>
+								<p><a href="https://www.examcoo.com/index/ku">考试酷</a></p>
+								<p><a href="http://www.socolar.com/">SOCOLAR</a></p>
+								<p><a href="http://www.termonline.cn/index.htm">学术在线</a></p>
+								<p><a href="http://scholar.hezibuluo.com/">盒子学术</a></p>
+								<p><a href="http://www.chinalibs.net/">e线图情</a></p>
+								<p><a href="http://www.modernhistory.org.cn/index.htm">抗日文献数据平台</a></p>
+								<p><a href="https://ac.scmor.com/">谷歌学术镜像</a></p>
+								<p><a href="http://www.oalib.com/">OALib</a></p>
+								<p><a href="http://www.nssd.org/">国家哲学社会科学学术期刊数据库</a></p>
+							</div>
+						</div>
+					</div>
+				
+				
+				
+				
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>

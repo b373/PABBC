@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>身份证号码解析器</title>
+    <link rel="shortcut icon" href="../images/id.png" />
+    <script src="js/GB2260.js"></script>
+    <script src="js/IDCardPaser.js"></script>
+    <link type="text/css" href="../bootstrap.min.css" rel="stylesheet"> 
+    <style>
+        html{
+            padding: 0;
+            margin: 0 auto;
+        }
+        body{
+            width:100%;
+            padding:5%;
+            
+        }
+        h3{
+            text-align: center;
+            margin-bottom: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h3>身份证号码解析</h3>
+<form role="form" >
+    <div class="form-group">
+      <label for="IDCardNumber">身份证号码：</label>
+      <input type="text" class="form-control" name="IDCardNumber" id="IDCardNumber" placeholder="请输入身份证号码">
+    </div>
+    <div class="form-group">
+        <label for="Address">所在地：</label>
+        <input type="text" class="form-control" name="Address" id="Address" placeholder="所在地">
+    </div>
+    <div class="form-group">
+        <label for="BirthDate">出生日期：</label>
+        <input type="text" class="form-control" name="BirthDate" id="BirthDate" placeholder="出生日期">
+      </div>
+      <div class="form-group">
+        <label for="Sex">性别：</label>
+        <input type="text" class="form-control" name="Sex" id="Sex" placeholder="性别">
+      </div>    
+  </form>
+  <script>
+    document.getElementById("IDCardNumber").addEventListener("change", function () {
+        var idCardPaser = new IDCardPaser();
+        var info = idCardPaser.getInfo(document.getElementById("IDCardNumber").value);
+        if (info == false) {
+            alert('身份证号码输入可能有误，请确认')
+        } else {
+            document.getElementById("Sex").value = info.sex;
+            document.getElementById("BirthDate").value = info.birth;            
+            document.getElementById("Address").value = info.addr;            
+        }
+    });
+</script>
+</body>
+</html>

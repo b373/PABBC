@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>签名涂鸦</title>
+	<link rel="shortcut icon" href="../images/sign.png" /> 
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+
+		
+		<div class="container">
+		<div class="row">
+		<div class="js-signature"></div>
+		</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<h3>生成签名图片</h3>
+					
+					<div class="js-signature" data-width="90%" data-height="300px" data-border="1px solid black" data-line-color="#333" data-auto-fit="true"></div>
+					<p><button id="clearBtn" class="btn btn-default" onclick="clearCanvas();">清空</button>&nbsp;<button id="saveBtn" class="btn btn-default" onclick="saveSignature();" disabled>保存</button></p>
+					<div id="signature">
+						<p><em>点击保存之后,签名会显示在下方.</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<script src="js/jq-signature.js"></script>
+	<script type="text/javascript">
+		$(document).on('ready', function() {
+			if ($('.js-signature').length) {
+				$('.js-signature').jqSignature();
+			}
+		});
+
+		function clearCanvas() {
+			$('#signature').html('<p><em>Your signature will appear here when you click "Save Signature"</em></p>');
+			$('.js-signature').eq(1).jqSignature('clearCanvas');
+			$('#saveBtn').attr('disabled', true);
+		}
+
+		function saveSignature() {
+			$('#signature').empty();
+			var dataUrl = $('.js-signature').eq(1).jqSignature('getDataURL');
+			var img = $('<img>').attr('src', dataUrl);
+			$('#signature').append($('<p>').text("长按下方签名保存到本地:"));
+			$('#signature').append(img);
+		}
+
+		$('.js-signature').eq(1).on('jq.signature.changed', function() {
+			$('#saveBtn').attr('disabled', false);
+		});
+	</script>
+</body>
+</html>

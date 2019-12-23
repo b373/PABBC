@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="helang.love@qq.com">
+    <title>移动端适配计算</title>
+    <link rel="shortcut icon" href="../images/move.png" />
+    <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/bootstrap-3.3.4.css">
+</head>
+<body>
+<div class="container" id="vm">
+    <h3 style="margin: 0;padding: 50px 0 30px 0;">移动端适配 <code>rem</code> & <code>vw</code> 计算工具</h3>
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">vw 计算</h3>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal">
+                        <div class="form-group" :class="{'has-error':vwValue=='超出范围'}">
+                            <label class="col-xs-12 control-label" style="text-align: left;">元素尺寸</label>
+                            <div class="col-xs-12">
+                                <input type="text" class="form-control" placeholder="请输入元素尺寸 (px)" v-model="vw.el">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-12 control-label" style="text-align: left;">设计稿宽度 (px)</label>
+                            <div class="col-xs-12">
+                                <input type="text" class="form-control" placeholder="请输入设计稿宽度 (px)" v-model="vw.psd">
+                            </div>
+                        </div>
+                        <div class="form-group" :class="{'has-error':vwValue=='超出范围'}">
+                            <label class="col-xs-12 control-label" style="text-align: left;">结果</label>
+                            <div class="col-xs-12">
+                                <div class="row">
+                                    <div class="col-xs-9">
+                                        <input type="text" class="form-control" placeholder="vw计算结果" :value="vwValue" readonly ref="vwVal">
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <button type="button" class="btn btn-success btn-block" v-if="vw.isCopy">复制成功</button>
+                                        <button type="button" class="btn btn-primary btn-block" @click="copyVwValue" v-else>复制</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <hr />
+                    <div class="text-danger">如今移动端设备对 vw 兼容性越来越好，vw 更方便快捷</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">rem 计算</h3>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal">
+                        <div class="form-group" :class="{'has-error':remValue=='超出范围'}">
+                            <label class="col-xs-12 control-label" style="text-align: left;">元素尺寸</label>
+                            <div class="col-xs-12">
+                                <input type="text" class="form-control" placeholder="请输入元素尺寸 (px)" v-model="rem.el">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-12 control-label" style="text-align: left;">设计稿宽度</label>
+                            <div class="col-xs-12">
+                                <input type="text" class="form-control" placeholder="请输入设计稿宽度 (px)" v-model="rem.psd">
+                            </div>
+                        </div>
+                        <div class="form-group" :class="{'has-error':remValue=='超出范围'}">
+                            <label class="col-xs-12 control-label" style="text-align: left;">结果</label>
+                            <div class="col-xs-12">
+                                <div class="row">
+                                    <div class="col-xs-9">
+                                        <input type="text" class="form-control" placeholder="rem计算结果" :value="remValue" readonly ref="remVal">
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <button type="button" class="btn btn-success btn-block" v-if="rem.isCopy">复制成功</button>
+                                        <button type="button" class="btn btn-primary btn-block" @click="copyRemValue" v-else>复制</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <hr />
+                    <div class="text-danger">
+                        <div>rem 的值是需要动态计算当前比例的，当前比例是1rem=100px</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="http://www.jq22.com/jquery/vue.min.js"></script>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#vm',
+        data: {
+            vw:{
+                el:"",
+                psd:750,
+                isCopy:false
+            },
+            rem:{
+                el:"",
+                psd:750,
+                isCopy:false
+            }
+        },
+        computed:{
+            vwValue:function () {
+                if(!this.vw.el || !this.vw.psd){
+                    return "";
+                }else {
+                    this.vw.isCopy=false;
+                    return (this.vw.el/this.vw.psd*100).toString().match(/^\d+(?:\.\d{0,5})?/)+'vw';
+                }
+
+            },
+            remValue:function () {
+                if(!this.rem.el || !this.rem.psd){
+                    return "";
+                }else {
+                    this.rem.isCopy=false;
+                    return (this.rem.el/100).toString().match(/^\d+(?:\.\d{0,5})?/)+'rem';
+                }
+
+            }
+        },
+        methods: {
+            copyVwValue:function(){
+                this.$refs.vwVal.select();
+                document.execCommand("Copy");
+                this.vw.isCopy=true;
+            },
+            copyRemValue:function(){
+                this.$refs.remVal.select();
+                document.execCommand("Copy");
+                this.rem.isCopy=true;
+            }
+        }
+    })
+</script>
+</body>
+</html>
